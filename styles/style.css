@@ -1,0 +1,19 @@
+/* Modo Claro (padrão) */
+body {
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+/* Modo Dark */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Estilo para os botões (opcional) */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
