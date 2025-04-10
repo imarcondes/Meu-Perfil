@@ -1,19 +1,104 @@
-/* Modo Claro (padrão) */
-body {
-    background-color: white;
-    color: black;
-    transition: 0.3s;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Modo Dark */
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode */
 body.dark-mode {
     background-color: #121212;
     color: white;
 }
 
-/* Estilo para os botões (opcional) */
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Main layout */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Section */
+section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Dark mode para section */
+body.dark-mode section {
+    background-color: #1e1e1e;
+}
+
+/* Lista de detalhes */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Círculos pretos */
+.quadrinhos {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quadrinhos div {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+}
+
+/* Botão */
 button {
     padding: 10px 20px;
-    margin-top: 10px;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Imagem */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    section {
+        width: 48%;
+    }
+}
+
+@media (max-width: 767px) {
+    section {
+        width: 100%;
+    }
 }
