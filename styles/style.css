@@ -1,3 +1,14 @@
+:root {
+    --bg-light: #fefefe;
+    --bg-dark: #121212;
+    --text-light: #1a1a1a;
+    --text-dark: #f0f0f0;
+    --highlight: #6c63ff;
+    --highlight-dark: #8c82ff;
+    --section-light: #f1f1f1;
+    --section-dark: #1e1e1e;
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -7,23 +18,32 @@
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
     padding: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 /* Dark mode */
 body.dark-mode {
-    background-color: #121212;
-    color: white;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 /* Header */
 header {
     text-align: center;
     margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--highlight);
+}
+
+header h2 {
+    color: gray;
 }
 
 /* Main layout */
@@ -35,14 +55,15 @@ main {
 
 /* Section */
 section {
-    background-color: #f5f5f5;
+    background-color: var(--section-light);
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
 }
 
-/* Dark mode para section */
 body.dark-mode section {
-    background-color: #1e1e1e;
+    background-color: var(--section-dark);
 }
 
 /* Lista de detalhes */
@@ -51,7 +72,11 @@ ul {
     padding-left: 0;
 }
 
-/* Círculos pretos */
+li strong {
+    color: var(--highlight);
+}
+
+/* Quadrinhos */
 .quadrinhos {
     display: flex;
     gap: 10px;
@@ -61,14 +86,30 @@ ul {
 .quadrinhos div {
     width: 30px;
     height: 30px;
-    background-color: black;
+    background-color: var(--highlight);
+    border-radius: 5px;
 }
 
 /* Botão */
 button {
     padding: 10px 20px;
+    background-color: var(--highlight);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #554be2;
+    transform: scale(1.05);
+}
+
+body.dark-mode button {
+    background-color: white;
+    color: var(--highlight-dark);
 }
 
 /* Imagem */
@@ -76,13 +117,41 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-top: 15px;
 }
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
+    color: gray;
 }
+
+/*3 seções lado a lado */
+.info-secoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+/* Cada seção dentro do container */
+.info-secoes section {
+    flex: 1;
+    min-width: 250px; 
+    background-color: var(--section-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+/* Modo escuro nas seções */
+body.dark-mode .info-secoes section {
+    background-color: var(--section-dark);
+}
+
 
 /* Responsividade */
 @media (min-width: 768px) {
